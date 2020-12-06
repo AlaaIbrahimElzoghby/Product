@@ -1,0 +1,9 @@
+E:\Tasks\Product\Product\OA.Service\bin\Debug\netcoreapp3.1\OA.Service.deps.json
+E:\Tasks\Product\Product\OA.Service\bin\Debug\netcoreapp3.1\OA.Service.dll
+E:\Tasks\Product\Product\OA.Service\bin\Debug\netcoreapp3.1\OA.Service.pdb
+E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.csprojAssemblyReference.cache
+E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.AssemblyInfoInputs.cache
+E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.AssemblyInfo.cs
+E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.csproj.CoreCompileInputs.cache
+E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.dll
+E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.pdb

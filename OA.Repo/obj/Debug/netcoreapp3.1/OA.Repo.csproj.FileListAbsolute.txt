@@ -3,3 +3,10 @@ E:\Tasks\Product\Product\OA.Repo\bin\Debug\netcoreapp3.1\OA.Repo.dll
 E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.csprojAssemblyReference.cache
 E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.AssemblyInfoInputs.cache
 E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.AssemblyInfo.cs
+E:\Tasks\Product\Product\OA.Repo\bin\Debug\netcoreapp3.1\OA.Repo.pdb
+E:\Tasks\Product\Product\OA.Repo\bin\Debug\netcoreapp3.1\OA.Data.dll
+E:\Tasks\Product\Product\OA.Repo\bin\Debug\netcoreapp3.1\OA.Data.pdb
+E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.csproj.CoreCompileInputs.cache
+E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.csproj.CopyComplete
+E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.dll
+E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.pdb
