@@ -1,0 +1,5 @@
+E:\Tasks\Product\Product\OA.Repo\bin\Debug\netcoreapp3.1\OA.Repo.deps.json
+E:\Tasks\Product\Product\OA.Repo\bin\Debug\netcoreapp3.1\OA.Repo.dll
+E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.csprojAssemblyReference.cache
+E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.AssemblyInfoInputs.cache
+E:\Tasks\Product\Product\OA.Repo\obj\Debug\netcoreapp3.1\OA.Repo.AssemblyInfo.cs
