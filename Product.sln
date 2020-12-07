@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OA.WebApi", "OA.WebApi\OA.WebApi.csproj", "{8E039A7D-8AE8-4484-82D9-B762CA2E01C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OA.Data", "OA.Data\OA.Data.csproj", "{363A17FC-3803-4CCD-9830-4C6C31CBEC1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OA.Data", "OA.Data\OA.Data.csproj", "{363A17FC-3803-4CCD-9830-4C6C31CBEC1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OA.Repo", "OA.Repo\OA.Repo.csproj", "{450879E2-F980-42DD-85B5-B4F62916FB90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OA.Repo", "OA.Repo\OA.Repo.csproj", "{450879E2-F980-42DD-85B5-B4F62916FB90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OA.Service", "OA.Service\OA.Service.csproj", "{91A97544-F638-426C-97EF-99AC38269F07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OA.Service", "OA.Service\OA.Service.csproj", "{91A97544-F638-426C-97EF-99AC38269F07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OA.WebApi", "OA.WebApi\OA.WebApi.csproj", "{FE3040FE-DF9D-407C-9ED0-D41B4520A098}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8E039A7D-8AE8-4484-82D9-B762CA2E01C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E039A7D-8AE8-4484-82D9-B762CA2E01C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E039A7D-8AE8-4484-82D9-B762CA2E01C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E039A7D-8AE8-4484-82D9-B762CA2E01C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{363A17FC-3803-4CCD-9830-4C6C31CBEC1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{363A17FC-3803-4CCD-9830-4C6C31CBEC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{363A17FC-3803-4CCD-9830-4C6C31CBEC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{91A97544-F638-426C-97EF-99AC38269F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91A97544-F638-426C-97EF-99AC38269F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91A97544-F638-426C-97EF-99AC38269F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3040FE-DF9D-407C-9ED0-D41B4520A098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3040FE-DF9D-407C-9ED0-D41B4520A098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3040FE-DF9D-407C-9ED0-D41B4520A098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3040FE-DF9D-407C-9ED0-D41B4520A098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

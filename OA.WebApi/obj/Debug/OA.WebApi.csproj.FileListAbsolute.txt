@@ -1,5 +1,0 @@
-E:\Tasks\Product\Product\OA.WebApi\bin\Debug\OA.WebApi.dll
-E:\Tasks\Product\Product\OA.WebApi\bin\Debug\OA.WebApi.pdb
-E:\Tasks\Product\Product\OA.WebApi\obj\Debug\OA.WebApi.csproj.CoreCompileInputs.cache
-E:\Tasks\Product\Product\OA.WebApi\obj\Debug\OA.WebApi.dll
-E:\Tasks\Product\Product\OA.WebApi\obj\Debug\OA.WebApi.pdb
