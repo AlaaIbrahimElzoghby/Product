@@ -27,24 +27,30 @@ namespace OA.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] ProductCatalog product)
         {
-            _productService.AddProduct(product);
-            return Ok();
+            if(_productService.AddProduct(product))
+                return Ok();
+            return BadRequest();
         }
 
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] ProductCatalog product)
         {
+            if(id <= 0)
+                return BadRequest();
             product.id = id;
-            _productService.UpdateProduct(product);
-            return Ok();
+
+            if (_productService.UpdateProduct(product))
+                return Ok();
+            return BadRequest();
         }
 
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _productService.DeleteProduct(id);
-            return Ok();
+            if (_productService.DeleteProduct(id))
+                return Ok();
+            return BadRequest();
 
         }
     }
