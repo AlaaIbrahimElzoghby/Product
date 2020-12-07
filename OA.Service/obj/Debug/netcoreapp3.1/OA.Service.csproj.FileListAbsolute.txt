@@ -7,3 +7,8 @@ E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.AssemblyI
 E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.csproj.CoreCompileInputs.cache
 E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.dll
 E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.pdb
+E:\Tasks\Product\Product\OA.Service\bin\Debug\netcoreapp3.1\OA.Data.dll
+E:\Tasks\Product\Product\OA.Service\bin\Debug\netcoreapp3.1\OA.Repo.dll
+E:\Tasks\Product\Product\OA.Service\bin\Debug\netcoreapp3.1\OA.Data.pdb
+E:\Tasks\Product\Product\OA.Service\bin\Debug\netcoreapp3.1\OA.Repo.pdb
+E:\Tasks\Product\Product\OA.Service\obj\Debug\netcoreapp3.1\OA.Service.csproj.CopyComplete

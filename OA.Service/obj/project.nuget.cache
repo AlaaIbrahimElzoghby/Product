@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Z34mVdvX5XeFDMAmCGUss33nIt65Qapoku9NKB8HfNIshazlOKbSVoqUfWpieKDTiHlNtMbLXguMfHeTGO8fGg==",
+  "dgSpecHash": "+VTSCkX0ZNbItLa8+hrCQcla9et21dKkO1fBYAx/zajVIy57S0mGVvpvb/RaEj8IaMK3+z0+DXCPkiqOIuRqnA==",
   "success": true,
   "projectFilePath": "E:\\Tasks\\Product\\Product\\OA.Service\\OA.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.0\\microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.0\\microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.0\\microsoft.entityframeworkcore.analyzers.5.0.0.nupkg.sha512",
+    "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.0\\microsoft.entityframeworkcore.relational.5.0.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",

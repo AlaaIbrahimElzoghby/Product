@@ -12,6 +12,6 @@ namespace OA.Repo
         {
 
         }
-        public DbSet<ProductCatalog> Users { get; set; }
+        public DbSet<ProductCatalog> Products { get; set; }
     }
 }
