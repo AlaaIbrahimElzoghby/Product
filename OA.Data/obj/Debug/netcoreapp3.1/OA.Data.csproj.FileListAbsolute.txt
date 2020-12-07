@@ -6,3 +6,4 @@ E:\Tasks\Product\Product\OA.Data\obj\Debug\netcoreapp3.1\OA.Data.AssemblyInfo.cs
 E:\Tasks\Product\Product\OA.Data\obj\Debug\netcoreapp3.1\OA.Data.csproj.CoreCompileInputs.cache
 E:\Tasks\Product\Product\OA.Data\obj\Debug\netcoreapp3.1\OA.Data.dll
 E:\Tasks\Product\Product\OA.Data\obj\Debug\netcoreapp3.1\OA.Data.pdb
+E:\Tasks\Product\Product\OA.Data\obj\Debug\netcoreapp3.1\OA.Data.csprojAssemblyReference.cache

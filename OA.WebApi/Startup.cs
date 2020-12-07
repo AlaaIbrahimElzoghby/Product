@@ -49,6 +49,7 @@ namespace OA.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -57,7 +58,9 @@ namespace OA.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Product}/{action=GetAllProducts}/{id?}");
             });
         }
     }
