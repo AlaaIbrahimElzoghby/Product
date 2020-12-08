@@ -4,11 +4,11 @@ import {HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
-import { ProductService } from './product.service';
+import { ProductService } from './Services/product.service';
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductAddEditComponent } from './product-add-edit/product-add-edit.component';
+import { ProductsComponent } from './Components/products/products.component';
+import { ProductAddEditComponent } from './Components/product-add-edit/product-add-edit.component';
 
 @NgModule({
   declarations: [

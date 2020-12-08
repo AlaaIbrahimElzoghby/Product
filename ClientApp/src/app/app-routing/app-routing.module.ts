@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductsComponent } from '../products/products.component';
-import { ProductAddEditComponent } from '../product-add-edit/product-add-edit.component';
+import { ProductsComponent } from '../Components/products/products.component';
+import { ProductAddEditComponent } from '../Components/product-add-edit/product-add-edit.component';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent, pathMatch: 'full' },

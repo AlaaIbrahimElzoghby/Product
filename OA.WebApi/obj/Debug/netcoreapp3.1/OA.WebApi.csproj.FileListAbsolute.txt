@@ -65,5 +65,17 @@ E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\OA.Service.dll
 E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\OA.Service.pdb
 E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Humanizer.dll
 E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.NodeServices.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.Extensions.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+E:\Tasks\Product\Product\OA.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
 E:\Tasks\Product\Product\OA.WebApi\obj\Debug\netcoreapp3.1\OA.WebApi.csproj.CoreCompileInputs.cache
+E:\Tasks\Product\Product\OA.WebApi\obj\Debug\netcoreapp3.1\OA.WebApi.MvcApplicationPartsAssemblyInfo.cs
 E:\Tasks\Product\Product\OA.WebApi\obj\Debug\netcoreapp3.1\OA.WebApi.MvcApplicationPartsAssemblyInfo.cache

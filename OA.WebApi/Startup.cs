@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,6 +47,11 @@ namespace OA.WebApi
             }
                 );
 
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
+
             services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
             services.AddTransient<IProductService, ProductService>();
         }
@@ -67,7 +73,7 @@ namespace OA.WebApi
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSpaStaticFiles();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -77,6 +83,16 @@ namespace OA.WebApi
                 endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Product}/{action=GetAllProducts}/{id?}");
+            });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
             });
         }
     }
