@@ -27,17 +27,18 @@ namespace OA.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] ProductCatalog product)
         {
-            if(_productService.AddProduct(product))
+            product.lastUpdated = DateTime.Now;
+            if (_productService.AddProduct(product))
                 return Ok();
             return BadRequest();
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] ProductCatalog product)
+        [HttpPut]
+        public IActionResult Put([FromBody] ProductCatalog product)
         {
-            if(id <= 0)
+            if(product.id <= 0)
                 return BadRequest();
-            product.id = id;
+            product.lastUpdated = DateTime.Now;
 
             if (_productService.UpdateProduct(product))
                 return Ok();
@@ -45,7 +46,7 @@ namespace OA.WebApi.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             if (_productService.DeleteProduct(id))

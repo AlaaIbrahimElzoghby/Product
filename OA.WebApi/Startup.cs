@@ -37,6 +37,15 @@ namespace OA.WebApi
             options.UseSqlServer(
                 Configuration.GetConnectionString("ProductWebsite")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            }
+                );
+
             services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
             services.AddTransient<IProductService, ProductService>();
         }
@@ -49,8 +58,15 @@ namespace OA.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            
+            else
+            {
+                app.UseHsts();
+            }
+
+            app.UseCors("CorsPolicy");
+
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
