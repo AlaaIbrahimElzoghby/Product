@@ -28,6 +28,14 @@ namespace OA.Service.Services
             return _productRepository.GetAllProducts();
         }
 
+        public ProductCatalog GetProductById(int productId)
+        {
+            if (productId > 0)
+                return _productRepository.GetProductById(productId);
+            else
+                return null;
+        }
+
         #endregion
 
 

@@ -9,6 +9,7 @@ namespace OA.Repo.Interfaces
     {
         #region ComplexQueries
         IEnumerable<ProductCatalog> GetAllProducts();
+        ProductCatalog GetProductById(int productId);
         #endregion
 
 

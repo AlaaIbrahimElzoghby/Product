@@ -1,5 +1,7 @@
 export class Product {
-    Name: string;
-    PhotoName: string;
-    Price: string;
+    id: number;
+    name: string;
+    photoName: string;
+    price: number;
+    lastUpdated : Date;
   }

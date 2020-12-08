@@ -23,7 +23,29 @@ namespace OA.Repo.Repositories
         #region ComplexQueries
         public IEnumerable<ProductCatalog> GetAllProducts()
         {
-            return _applicationContext.Products;
+            try
+            {
+                return _applicationContext.Products;
+
+            }
+            catch (Exception e)
+            {
+                return null;
+                // we can log exception here in exception table
+            }
+        }
+
+        public ProductCatalog GetProductById(int productId)
+        {
+            try
+            {
+                return _applicationContext.Products.FirstOrDefault(m => m.id == productId);
+            }
+            catch (Exception e)
+            {
+                return null;
+                // we can log exception here in exception table
+            }
         }
         #endregion
 

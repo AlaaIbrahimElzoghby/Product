@@ -9,6 +9,7 @@ namespace OA.Service.Interfaces
     {
         #region ComplexQureies
         IEnumerable<ProductCatalog> GetAllProducts();
+        ProductCatalog GetProductById(int productId);
         #endregion
 
         #region Methods
