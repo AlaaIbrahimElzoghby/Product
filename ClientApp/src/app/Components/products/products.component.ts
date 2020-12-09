@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild, OnInit,Output, EventEmitter, Input, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductService } from '../../Services/product.service';
 import { Product } from '../../Models/Product';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
+import { HttpEventType } from '@angular/common/http'; 
+
+
 
 @Component({
   selector: 'app-products',
@@ -22,7 +26,8 @@ import { Product } from '../../Models/Product';
     loadProducts() {
       this.Products$ = this.ProductService.getProducts();
     }
-  
+   
+
     delete(productId) {
       const ans = confirm('Do you want to delete product with id: ' + productId);
       if (ans) {
@@ -30,5 +35,17 @@ import { Product } from '../../Models/Product';
           this.loadProducts();
         });
       }
+    };
+
+    public upload(event) {
+      debugger;
+      if (event.target.files && event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.ProductService.uploadFile(file).subscribe(
+          data => {
+            this.loadProducts();
+          });
+      }
     }
+    
   }

@@ -83,16 +83,12 @@ namespace OA.WebApi.Controllers
 
         }
 
-
         [HttpPost]
-        public void ExcelUpload()
+        public IActionResult Upload(IFormFile file)
         {
-            var file = Request.Form.Files[0];
-
-
-            if (file != null)
+            if (file.Length > 0)
             {
-                Stream stream = file.InputStream;
+                Stream stream = file.OpenReadStream();
 
                 IExcelDataReader reader = null;
 
@@ -120,6 +116,8 @@ namespace OA.WebApi.Controllers
                 }
 
             }
+
+            return Ok();
         }
     }
 }

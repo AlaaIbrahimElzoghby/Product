@@ -4,6 +4,14 @@
 <p>
   <a [routerLink]="['/add']" class="btn btn-primary float-right mb-3">New product</a>
 </p>
+     
+<div class="container-upload">
+  <button [disabled]="disabled" [ngClass]="{'disabled': disabled}" class="button upload" (click)="inputFile.click()">
+      UPLOAD Products From Excel File
+  </button>
+  <input name="file" id="file"(change)="upload($event)" type="file" #inputFile hidden>
+</div>
+
 <table class="table table-sm table-hover" *ngIf="(Products$ | async)?.length>0">
   <thead>
     <tr>
@@ -21,8 +29,9 @@
       <td>{{ product.id }}</td>
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>
-      <td>{{ product.lastUpdated | date: "dd/MM/yHH:mm" }}</td>
-      <td><img [src]="'https://localhost:44399/Images/Products/'+product.photoName" style="width: 60px;height: 40px;" /> 
+      <td>{{ product.lastUpdated | date: "dd/MM/y HH:mm" }}</td>
+      <td>
+        <img *ngIf="product.photoName!=null" [src]="'https://localhost:44399/Images/Products/'+product.photoName" style="width: 60px;height: 40px;" /> 
       </td>
 
       <td><a [routerLink]="['/product/edit/', product.id]" class="btn btn-primary btn-sm float-right">Edit</a></td>

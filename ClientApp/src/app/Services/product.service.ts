@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { environment } from '../../../src/environments/environment';
@@ -59,6 +59,39 @@ export class ProductService {
         retry(1),
         catchError(this.errorHandler)
       );
+  }
+
+  /** UploadExcel(formData: FormData) { 
+    debugger; 
+    let headers = new HttpHeaders();  
+    let path = this.myAppUrl + 'ExcelUpload';
+  
+    headers.append('Content-Type', 'multipart/form-data');  
+    headers.append('Accept', 'application/json');  
+  
+    const httpOptions = { headers: headers };  
+    return this.http.post(path, formData, httpOptions)  
+  }  
+   */
+
+  uploadFile(file: Blob) {
+    debugger;
+
+    let headers = new HttpHeaders();    
+    headers.append('Content-Type', 'multipart/form-data');  
+    headers.append('Accept', 'application/json');  
+  
+    const httpOptions = { headers: headers };  
+    let path = this.myAppUrl + 'Upload';
+
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    
+    return this.http.request(new HttpRequest(
+      'POST',
+      path,
+      formData,httpOptions));
   }
 
   errorHandler(error) {
