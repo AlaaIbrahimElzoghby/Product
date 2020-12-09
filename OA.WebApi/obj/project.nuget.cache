@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IA4cUr3mA5+ezf1YnuIi8jzK+ZcWMw/MrB40jW7Zub8GZWa04mUhOSIQ8F/CAzmlwDbWug93r9Md0MAzioC7vg==",
+  "dgSpecHash": "oxuHu+GdE1gHsCDCelas0jSwGP1/wPOPSo5PCvvcmO8r9zDw47Os0/YnhIyIwW7iys7K18hwruzZURAYYxnkrg==",
   "success": true,
   "projectFilePath": "E:\\Tasks\\Product\\Product\\OA.WebApi\\OA.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.aspnetcore.nodeservices\\3.1.10\\microsoft.aspnetcore.nodeservices.3.1.10.nupkg.sha512",
     "C:\\Users\\AlaaElzoghby\\.nuget\\packages\\microsoft.aspnetcore.spaservices\\3.1.10\\microsoft.aspnetcore.spaservices.3.1.10.nupkg.sha512",

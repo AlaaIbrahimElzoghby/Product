@@ -32,17 +32,17 @@ namespace OA.WebApi.Helpers
                 // Convert from base64 representation to image
                 byte[] imageBytes = Convert.FromBase64String(imageString);
 
-                //Path to save image
-                String path = "~/Images/Products/";
 
                 // Generating unique name for image
-                string imageName = GetUniqueFileName("productImage");
+                string imageName = GetUniqueFileName("productImage")+".jpg";
 
                 //set the image path
-                string imgPath = Path.Combine(path, imageName);
+                var path = Path.Combine(
+                  Directory.GetCurrentDirectory(), "Images/Products",
+                  imageName);
 
                 // Saving image
-                File.WriteAllBytes(imgPath, imageBytes);
+                File.WriteAllBytes(path, imageBytes);
 
                 // Return image name to save in database
                 return imageName;

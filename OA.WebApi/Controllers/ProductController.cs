@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using ExcelDataReader;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OA.Data;
@@ -37,8 +41,9 @@ namespace OA.WebApi.Controllers
             // Converting from base64 representation to image
             if(product.photoName != null)
             {
-                string uniqueImgName = Images.Instance.Base64ToImage(product.photoName);
-                product.photoName = uniqueImgName;
+                String onlyBase64Text = product.photoName.Substring(23);
+                string savedImgName = Images.Instance.Base64ToImage(onlyBase64Text);
+                product.photoName = savedImgName;
             }
 
             product.lastUpdated = DateTime.Now;
@@ -56,9 +61,9 @@ namespace OA.WebApi.Controllers
             // Converting from base64 representation to image
             if (product.photoName != null)
             {
-                string uniqueImgName = Images.Instance.Base64ToImage(product.photoName);
-                if (uniqueImgName != null)
-                    product.photoName = uniqueImgName;
+                String onlyBase64Text = product.photoName.Substring(23);
+                string savedImgName = Images.Instance.Base64ToImage(onlyBase64Text);
+                product.photoName = savedImgName;
             }
 
             product.lastUpdated = DateTime.Now;
@@ -76,6 +81,45 @@ namespace OA.WebApi.Controllers
                 return Ok();
             return BadRequest();
 
+        }
+
+
+        [HttpPost]
+        public void ExcelUpload()
+        {
+            var file = Request.Form.Files[0];
+
+
+            if (file != null)
+            {
+                Stream stream = file.InputStream;
+
+                IExcelDataReader reader = null;
+
+                if (file.FileName.EndsWith(".xls"))
+                {
+                    reader = ExcelReaderFactory.CreateBinaryReader(stream);
+                }
+                else if (file.FileName.EndsWith(".xlsx"))
+                {
+                    reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+                }
+
+                DataSet excelRecords = reader.AsDataSet();
+                reader.Close();
+
+                var finalRecords = excelRecords.Tables[0];
+                for (int i = 0; i < finalRecords.Rows.Count; i++)
+                {
+                    ProductCatalog product = new ProductCatalog();
+                    product.name = finalRecords.Rows[i][0].ToString();
+                    product.price = Convert.ToDecimal(finalRecords.Rows[i][1].ToString());
+                    product.lastUpdated = DateTime.Now;
+
+                    _productService.AddProduct(product);
+                }
+
+            }
         }
     }
 }
