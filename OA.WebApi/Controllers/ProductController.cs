@@ -23,7 +23,9 @@ namespace OA.WebApi.Controllers
             _productService = productService;
         }
 
-        
+
+        #region CRUD operations
+
         [HttpGet]
         [Route("Product/GetAllProducts")]
         public IEnumerable<ProductCatalog> GetAllProducts()
@@ -89,6 +91,9 @@ namespace OA.WebApi.Controllers
 
         }
 
+        #endregion
+
+
         [HttpPost]
         [Route("Product/ImportExcelFile")]
         public IActionResult ImportExcelFile()
@@ -115,7 +120,7 @@ namespace OA.WebApi.Controllers
                         ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
                         var rowCount = worksheet.Dimension.Rows;
 
-                        for (int row = 2; row <= rowCount; row++)
+                        for (int row = 1; row <= rowCount; row++)
                         {
                             list.Add(new ProductCatalog
                             {
@@ -128,6 +133,7 @@ namespace OA.WebApi.Controllers
                     }
                 }
 
+                // saving all imported files
                 foreach (var product in list)
                 {
                     _productService.AddProduct(product);

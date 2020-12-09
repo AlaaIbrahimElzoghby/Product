@@ -1,4 +1,4 @@
-<h1>Products</h1>
+<h1 style="margin-top: 40px;">Products</h1>
 
 <p *ngIf="!(Products$ | async)"><em>Loading...</em></p>
 <p>
@@ -6,13 +6,13 @@
 </p>
      
 <div class="container-upload">
-  <button [disabled]="disabled" [ngClass]="{'disabled': disabled}" class="button upload" (click)="inputFile.click()">
+  <button [disabled]="disabled" [ngClass]="{'disabled': disabled}" class="btn btn-secondary" (click)="inputFile.click()">
       UPLOAD Products From Excel File
   </button>
   <input name="file" id="file"(change)="upload($event)" type="file" #inputFile hidden>
 </div>
 
-<table class="table table-sm table-hover" *ngIf="(Products$ | async)?.length>0">
+<table style="margin-top: 40px;" class="table table-sm table-hover" *ngIf="(Products$ | async)?.length>0">
   <thead>
     <tr>
       <th>#</th>

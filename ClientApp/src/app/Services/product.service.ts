@@ -61,18 +61,6 @@ export class ProductService {
       );
   }
 
-  /** UploadExcel(formData: FormData) { 
-    debugger; 
-    let headers = new HttpHeaders();  
-    let path = this.myAppUrl + 'ExcelUpload';
-  
-    headers.append('Content-Type', 'multipart/form-data');  
-    headers.append('Accept', 'application/json');  
-  
-    const httpOptions = { headers: headers };  
-    return this.http.post(path, formData, httpOptions)  
-  }  
-   */
 
   uploadFile(file: Blob) {
     debugger;

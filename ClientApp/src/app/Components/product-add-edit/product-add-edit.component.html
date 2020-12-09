@@ -1,16 +1,17 @@
-<h1>{{actionType}} Product</h1>
+<h1 style="margin-top: 40px;">{{actionType}} Product</h1>
 <form [formGroup]="form" (ngSubmit)="save()" #formDir="ngForm" novalidate>
   <div class="form-group row">
     <label class=" control-label col-md-12">Name</label>
     <div class="col-md-12">
-      <input class="form-control" type="text" formControlName="name">
+      <input class="form-control" required type="text" formControlName="name">
     </div>
+
+
     <span class="text-danger ml-3" *ngIf="name.invalid && formDir.submitted">
       name is required.
     </span>
     
   </div>
-
   <div class="form-group row">
     <label class=" control-label col-md-12">Price</label>
     <div class="col-md-12">
