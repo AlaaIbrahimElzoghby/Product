@@ -4,13 +4,14 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
-using ExcelDataReader;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OA.Data;
 using OA.Service.Interfaces;
 using OA.WebApi.Helpers;
+using OfficeOpenXml;
 
 namespace OA.WebApi.Controllers
 {
@@ -24,18 +25,21 @@ namespace OA.WebApi.Controllers
 
         
         [HttpGet]
+        [Route("Product/GetAllProducts")]
         public IEnumerable<ProductCatalog> GetAllProducts()
         {
             return _productService.GetAllProducts().ToList();
         }
 
         [HttpGet]
+        [Route("Product/GetProductById/{productId}")]
         public ProductCatalog GetProductById(int productId) 
         {
             return _productService.GetProductById(productId);
         }
 
         [HttpPost]
+        [Route("Product/Post")]
         public IActionResult Post([FromBody] ProductCatalog product)
         {
             // Converting from base64 representation to image
@@ -53,6 +57,7 @@ namespace OA.WebApi.Controllers
         }
 
         [HttpPut]
+        [Route("Product/Put")]
         public IActionResult Put([FromBody] ProductCatalog product)
         {
             if(product.id <= 0)
@@ -75,6 +80,7 @@ namespace OA.WebApi.Controllers
 
 
         [HttpDelete]
+        [Route("Product/Delete/{productId}")]
         public IActionResult Delete(int productId)
         {
             if (_productService.DeleteProduct(productId))
@@ -84,34 +90,46 @@ namespace OA.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upload(IFormFile file)
+        [Route("Product/ImportExcelFile")]
+        public IActionResult ImportExcelFile()
         {
-            if (file.Length > 0)
+            var formFile = Request.Form.Files[0];
+            if (formFile.Length > 0)
             {
-                Stream stream = file.OpenReadStream();
-
-                IExcelDataReader reader = null;
-
-                if (file.FileName.EndsWith(".xls"))
+                var list = new List<ProductCatalog>();
+                if (formFile == null || formFile.Length <= 0)
                 {
-                    reader = ExcelReaderFactory.CreateBinaryReader(stream);
-                }
-                else if (file.FileName.EndsWith(".xlsx"))
-                {
-                    reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+                    return BadRequest();
                 }
 
-                DataSet excelRecords = reader.AsDataSet();
-                reader.Close();
-
-                var finalRecords = excelRecords.Tables[0];
-                for (int i = 0; i < finalRecords.Rows.Count; i++)
+                if (!Path.GetExtension(formFile.FileName).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
                 {
-                    ProductCatalog product = new ProductCatalog();
-                    product.name = finalRecords.Rows[i][0].ToString();
-                    product.price = Convert.ToDecimal(finalRecords.Rows[i][1].ToString());
-                    product.lastUpdated = DateTime.Now;
+                    return BadRequest();
+                }
+                using (var stream = new MemoryStream())
+                {
+                    formFile.CopyToAsync(stream);
 
+                    using (var package = new ExcelPackage(stream))
+                    {
+                        ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                        var rowCount = worksheet.Dimension.Rows;
+
+                        for (int row = 2; row <= rowCount; row++)
+                        {
+                            list.Add(new ProductCatalog
+                            {
+                                name = worksheet.Cells[row, 1].Value.ToString().Trim(),
+                                price = int.Parse(worksheet.Cells[row, 2].Value.ToString().Trim()),
+                                lastUpdated = DateTime.Now
+                        });
+
+                        }
+                    }
+                }
+
+                foreach (var product in list)
+                {
                     _productService.AddProduct(product);
                 }
 

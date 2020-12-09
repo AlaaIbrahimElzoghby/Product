@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -38,7 +39,26 @@ namespace OA.WebApi
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Product API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "Product API", 
+                    Version = "v1",
+                    Description = "An API to perform Product CRUD operations",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Alaa Elzoghby",
+                        Email = "elzoghbyalaa@gmail.com",
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Product API License 2020",
+                    }
+                });
+            });
+
+            services.Configure<FormOptions>(o => {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
             });
 
             services.AddControllers();
@@ -78,6 +98,12 @@ namespace OA.WebApi
                 app.UseHsts();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", " Product API V1");
+            });
+
             app.UseHttpsRedirection();
             app.UseCors("CorsPolicy");
 
@@ -94,9 +120,7 @@ namespace OA.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Product}/{action=GetAllProducts}/{id?}");
+                endpoints.MapControllers();
             });
 
             app.UseSpa(spa =>
@@ -109,11 +133,7 @@ namespace OA.WebApi
                 }
             });
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
+            
         }
     }
 }

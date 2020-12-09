@@ -30,7 +30,7 @@ export class ProductService {
   }
 
   getProduct(productId: number): Observable<Product> {
-    return this.http.get<Product>(this.myAppUrl + "Product/GetProductById?productId=" + productId)
+    return this.http.get<Product>(this.myAppUrl + "Product/GetProductById/" + productId)
     .pipe(
       retry(1),
       catchError(this.errorHandler)
@@ -54,7 +54,7 @@ export class ProductService {
   }
 
   deleteProduct(productId: number): Observable<Product> {
-      return this.http.delete<Product>(this.myAppUrl + "Product/Delete?productId=" + productId)
+      return this.http.delete<Product>(this.myAppUrl + "Product/Delete/" + productId)
       .pipe(
         retry(1),
         catchError(this.errorHandler)
@@ -82,10 +82,10 @@ export class ProductService {
     headers.append('Accept', 'application/json');  
   
     const httpOptions = { headers: headers };  
-    let path = this.myAppUrl + 'Upload';
+    let path = this.myAppUrl + 'Product/ImportExcelFile';
 
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append('formFile', file);
     
     
     return this.http.request(new HttpRequest(
