@@ -1,9 +1,11 @@
-﻿using OA.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OA.Data;
 using OA.Repo.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OA.Repo.Repositories
 {
@@ -21,11 +23,11 @@ namespace OA.Repo.Repositories
         #endregion
 
         #region ComplexQueries
-        public IEnumerable<ProductCatalog> GetAllProducts()
+        public async Task<IEnumerable<ProductCatalog>> GetAllProducts()
         {
             try
             {
-                return _applicationContext.Products;
+                return await _applicationContext.Products.ToListAsync();
 
             }
             catch (Exception e)
@@ -35,11 +37,11 @@ namespace OA.Repo.Repositories
             }
         }
 
-        public ProductCatalog GetProductById(int productId)
+        public async Task<ProductCatalog> GetProductById(int productId)
         {
             try
             {
-                return _applicationContext.Products.FirstOrDefault(m => m.id == productId);
+                return await _applicationContext.Products.FirstOrDefaultAsync(m => m.id == productId);
             }
             catch (Exception e)
             {
