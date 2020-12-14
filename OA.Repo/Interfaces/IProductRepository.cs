@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OA.Repo.Interfaces
 {
     public interface IProductRepository : IBaseRepository<OA.Data.ProductCatalog>
     {
         #region ComplexQueries
-        IEnumerable<ProductCatalog> GetAllProducts();
-        ProductCatalog GetProductById(int productId);
+        Task<IEnumerable<ProductCatalog>> GetAllProducts();
+        Task<ProductCatalog> GetProductById(int productId);
         #endregion
 
 
