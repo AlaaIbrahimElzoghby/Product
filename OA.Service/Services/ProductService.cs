@@ -4,6 +4,7 @@ using OA.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OA.Service.Services
 {
@@ -23,15 +24,15 @@ namespace OA.Service.Services
         #endregion
 
         #region ComplexQueries
-        public IEnumerable<ProductCatalog> GetAllProducts()
+        public async Task<IEnumerable<ProductCatalog>> GetAllProducts()
         {
-            return _productRepository.GetAllProducts();
+            return await _productRepository.GetAllProducts();
         }
 
-        public ProductCatalog GetProductById(int productId)
+        public async Task<ProductCatalog> GetProductById(int productId)
         {
             if (productId > 0)
-                return _productRepository.GetProductById(productId);
+                return await _productRepository.GetProductById(productId);
             else
                 return null;
         }

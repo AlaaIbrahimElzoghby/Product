@@ -28,14 +28,14 @@ namespace OA.WebApi.Controllers
 
         [HttpGet]
         [Route("Product/GetAllProducts")]
-        public IEnumerable<ProductCatalog> GetAllProducts()
+        public Task<IEnumerable<ProductCatalog>> GetAllProducts()
         {
-            return _productService.GetAllProducts().ToList();
+            return _productService.GetAllProducts();
         }
 
         [HttpGet]
         [Route("Product/GetProductById/{productId}")]
-        public ProductCatalog GetProductById(int productId) 
+        public Task<ProductCatalog> GetProductById(int productId) 
         {
             return _productService.GetProductById(productId);
         }
